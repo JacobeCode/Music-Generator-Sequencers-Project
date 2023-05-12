@@ -4,6 +4,10 @@ class music_informations():
     metrum = 0
     title = "Default"
     subtitle = "Default"
+    number_tacts ="\override Score.BarNumber.break-visibility = ##(#t #t #t) \n" \
+                        "\set Score.currentBarNumber = #1 \n" \
+                        "" + chr(92) + "bar " + chr(34) + chr(34) + "\n"
+
     template = chr(92) + "version " + chr(34) + "2.22.2" + chr(34) + "\n" \
                 "\header{ \n" \
                 "title = " + title + "\n" \
@@ -13,7 +17,5 @@ class music_informations():
                 "indent = 0\in \n" \
                 "ragged-last = ##f \n" \
                 "\context { \n" \
-                "\Score \n" \
-                "" + chr(92) + "remove Bar_number_engraver \n" \
                 "} \n" \
                 "} \n"

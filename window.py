@@ -24,14 +24,19 @@ class Ui_MainWindow(object):
         file_name = "test"
         text_file = open(file_name + ".ly", 'w')
         text_file.write(self.music_info.template + "{\n")
+        text_file.write(self.music_info.number_tacts + "\n")
         text_file.write(chr(92) + "time " + str(self.music_info.metrum) + "/4 ")
+
         while points_to_use > 0:
-            self.music_info.melody.append("f4'")
+            self.music_info.melody.append("f'4")
             points_to_use -= 4
         for note in self.music_info.melody:
             text_file.write(note + " ")
-        text_file.write("}\n")
+
+        # Closing file and setting proper bars
+        text_file.write("\n" + chr(92) + "bar " + chr(34) + "||" + chr(34) + "}")
         text_file.close()
+
         os.system("lilypond --pdf " + file_name + ".ly")
         os.system(file_name + ".pdf")
 
