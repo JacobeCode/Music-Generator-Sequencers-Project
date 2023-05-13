@@ -9,7 +9,6 @@ from music_informations import music_informations
 def __init__(self):
     self.music_info = music_informations()
 
-
 def generate_music(self):
     # Multiply by 4 because of calculations on quarter-notes
     points_to_use = (self.music_info.metrum * self.music_info.tacts) * 4

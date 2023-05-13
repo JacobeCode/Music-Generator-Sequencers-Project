@@ -89,6 +89,30 @@ class Ui_MainWindow(object):
         else:
             self.music_info.pauses_likelihood = int(self.pauses_insert.toPlainText())
 
+    def first_note_change(self):
+        pass
+
+    def last_note_change(self):
+        pass
+
+    def lower_ambitus_note_change(self):
+        pass
+
+    def higher_ambitus_note_change(self):
+        pass
+
+    def first_note_scale_change(self):
+        pass
+
+    def last_note_scale_change(self):
+        pass
+
+    def lower_ambitus_scale_change(self):
+        pass
+
+    def higher_ambitus_scale_change(self):
+        pass
+
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(640, 668)
@@ -98,14 +122,14 @@ class Ui_MainWindow(object):
         self.plainTextEdit_2.setGeometry(QtCore.QRect(410, 160, 201, 301))
         self.plainTextEdit_2.setObjectName("plainTextEdit_2")
         self.progressBar = QtWidgets.QProgressBar(self.centralwidget)
-        self.progressBar.setGeometry(QtCore.QRect(30, 480, 371, 23))
+        self.progressBar.setGeometry(QtCore.QRect(20, 560, 371, 23))
         self.progressBar.setProperty("value", 21)
         self.progressBar.setOrientation(QtCore.Qt.Horizontal)
         self.progressBar.setInvertedAppearance(False)
         self.progressBar.setTextDirection(QtWidgets.QProgressBar.TopToBottom)
         self.progressBar.setObjectName("progressBar")
         self.settings_tabs = QtWidgets.QTabWidget(self.centralwidget)
-        self.settings_tabs.setGeometry(QtCore.QRect(20, 170, 371, 321))
+        self.settings_tabs.setGeometry(QtCore.QRect(10, 110, 381, 391))
         font = QtGui.QFont()
         font.setBold(True)
         font.setWeight(75)
@@ -117,20 +141,8 @@ class Ui_MainWindow(object):
         font.setWeight(75)
         self.basic_settings.setFont(font)
         self.basic_settings.setObjectName("basic_settings")
-        self.comboBox_4 = QtWidgets.QComboBox(self.basic_settings)
-        self.comboBox_4.setGeometry(QtCore.QRect(40, 220, 151, 22))
-        self.comboBox_4.setObjectName("comboBox_4")
-        self.comboBox = QtWidgets.QComboBox(self.basic_settings)
-        self.comboBox.setGeometry(QtCore.QRect(210, 250, 121, 22))
-        self.comboBox.setObjectName("comboBox")
-        self.comboBox_2 = QtWidgets.QComboBox(self.basic_settings)
-        self.comboBox_2.setGeometry(QtCore.QRect(190, 220, 141, 22))
-        self.comboBox_2.setObjectName("comboBox_2")
-        self.comboBox_3 = QtWidgets.QComboBox(self.basic_settings)
-        self.comboBox_3.setGeometry(QtCore.QRect(10, 180, 281, 22))
-        self.comboBox_3.setObjectName("comboBox_3")
         self.metrum_info = QtWidgets.QTextEdit(self.basic_settings)
-        self.metrum_info.setGeometry(QtCore.QRect(10, 10, 221, 41))
+        self.metrum_info.setGeometry(QtCore.QRect(10, 10, 231, 31))
         self.metrum_info.setFrameShape(QtWidgets.QFrame.WinPanel)
         self.metrum_info.setLineWidth(0)
         self.metrum_info.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
@@ -139,7 +151,7 @@ class Ui_MainWindow(object):
         self.metrum_info.setTextInteractionFlags(QtCore.Qt.NoTextInteraction)
         self.metrum_info.setObjectName("metrum_info")
         self.metrum_insert = QtWidgets.QTextEdit(self.basic_settings)
-        self.metrum_insert.setGeometry(QtCore.QRect(240, 10, 51, 41))
+        self.metrum_insert.setGeometry(QtCore.QRect(240, 10, 61, 31))
         font = QtGui.QFont()
         font.setPointSize(16)
         font.setBold(True)
@@ -150,21 +162,21 @@ class Ui_MainWindow(object):
         self.metrum_insert.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
         self.metrum_insert.setObjectName("metrum_insert")
         self.metrum_div = QtWidgets.QTextEdit(self.basic_settings)
-        self.metrum_div.setGeometry(QtCore.QRect(300, 10, 51, 41))
+        self.metrum_div.setGeometry(QtCore.QRect(300, 10, 61, 31))
         self.metrum_div.setFrameShape(QtWidgets.QFrame.WinPanel)
         self.metrum_div.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
         self.metrum_div.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
         self.metrum_div.setTextInteractionFlags(QtCore.Qt.NoTextInteraction)
         self.metrum_div.setObjectName("metrum_div")
         self.tacts_info = QtWidgets.QTextEdit(self.basic_settings)
-        self.tacts_info.setGeometry(QtCore.QRect(10, 60, 221, 41))
+        self.tacts_info.setGeometry(QtCore.QRect(10, 40, 231, 31))
         self.tacts_info.setFrameShape(QtWidgets.QFrame.WinPanel)
         self.tacts_info.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
         self.tacts_info.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
         self.tacts_info.setTextInteractionFlags(QtCore.Qt.NoTextInteraction)
         self.tacts_info.setObjectName("tacts_info")
         self.tacts_insert = QtWidgets.QTextEdit(self.basic_settings)
-        self.tacts_insert.setGeometry(QtCore.QRect(240, 60, 111, 41))
+        self.tacts_insert.setGeometry(QtCore.QRect(240, 40, 121, 31))
         font = QtGui.QFont()
         font.setPointSize(16)
         font.setBold(True)
@@ -175,14 +187,14 @@ class Ui_MainWindow(object):
         self.tacts_insert.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
         self.tacts_insert.setObjectName("tacts_insert")
         self.pauses_info = QtWidgets.QTextEdit(self.basic_settings)
-        self.pauses_info.setGeometry(QtCore.QRect(10, 110, 221, 41))
+        self.pauses_info.setGeometry(QtCore.QRect(10, 70, 231, 31))
         self.pauses_info.setFrameShape(QtWidgets.QFrame.WinPanel)
         self.pauses_info.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
         self.pauses_info.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
         self.pauses_info.setTextInteractionFlags(QtCore.Qt.NoTextInteraction)
         self.pauses_info.setObjectName("pauses_info")
         self.pauses_insert = QtWidgets.QTextEdit(self.basic_settings)
-        self.pauses_insert.setGeometry(QtCore.QRect(240, 110, 111, 41))
+        self.pauses_insert.setGeometry(QtCore.QRect(240, 70, 121, 31))
         font = QtGui.QFont()
         font.setPointSize(16)
         font.setBold(True)
@@ -192,17 +204,120 @@ class Ui_MainWindow(object):
         self.pauses_insert.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
         self.pauses_insert.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
         self.pauses_insert.setObjectName("pauses_insert")
+        self.first_note_info = QtWidgets.QTextEdit(self.basic_settings)
+        self.first_note_info.setGeometry(QtCore.QRect(10, 100, 171, 31))
+        self.first_note_info.setFrameShape(QtWidgets.QFrame.WinPanel)
+        self.first_note_info.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
+        self.first_note_info.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
+        self.first_note_info.setTextInteractionFlags(QtCore.Qt.NoTextInteraction)
+        self.first_note_info.setObjectName("first_note_info")
+        self.last_note_info = QtWidgets.QTextEdit(self.basic_settings)
+        self.last_note_info.setGeometry(QtCore.QRect(10, 130, 171, 31))
+        self.last_note_info.setFrameShape(QtWidgets.QFrame.WinPanel)
+        self.last_note_info.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
+        self.last_note_info.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
+        self.last_note_info.setTextInteractionFlags(QtCore.Qt.NoTextInteraction)
+        self.last_note_info.setObjectName("last_note_info")
+        self.ambitus_low_info = QtWidgets.QTextEdit(self.basic_settings)
+        self.ambitus_low_info.setGeometry(QtCore.QRect(10, 160, 171, 31))
+        self.ambitus_low_info.setFrameShape(QtWidgets.QFrame.WinPanel)
+        self.ambitus_low_info.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
+        self.ambitus_low_info.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
+        self.ambitus_low_info.setTextInteractionFlags(QtCore.Qt.NoTextInteraction)
+        self.ambitus_low_info.setObjectName("ambitus_low_info")
+        self.ambitus_high_info = QtWidgets.QTextEdit(self.basic_settings)
+        self.ambitus_high_info.setGeometry(QtCore.QRect(10, 190, 171, 31))
+        self.ambitus_high_info.setFrameShape(QtWidgets.QFrame.WinPanel)
+        self.ambitus_high_info.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
+        self.ambitus_high_info.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
+        self.ambitus_high_info.setTextInteractionFlags(QtCore.Qt.NoTextInteraction)
+        self.ambitus_high_info.setObjectName("ambitus_high_info")
+        self.gridLayoutWidget = QtWidgets.QWidget(self.basic_settings)
+        self.gridLayoutWidget.setGeometry(QtCore.QRect(190, 100, 161, 121))
+        self.gridLayoutWidget.setObjectName("gridLayoutWidget")
+        self.gridLayout = QtWidgets.QGridLayout(self.gridLayoutWidget)
+        self.gridLayout.setContentsMargins(0, 0, 0, 0)
+        self.gridLayout.setObjectName("gridLayout")
+        self.note_first_input = QtWidgets.QComboBox(self.gridLayoutWidget)
+        self.note_first_input.setObjectName("note_first_input")
+        self.note_first_input.addItem("")
+        self.note_first_input.addItem("")
+        self.note_first_input.addItem("")
+        self.note_first_input.addItem("")
+        self.note_first_input.addItem("")
+        self.note_first_input.addItem("")
+        self.note_first_input.addItem("")
+        self.gridLayout.addWidget(self.note_first_input, 0, 0, 1, 1)
+        self.note_last_input = QtWidgets.QComboBox(self.gridLayoutWidget)
+        self.note_last_input.setObjectName("note_last_input")
+        self.note_last_input.addItem("")
+        self.note_last_input.addItem("")
+        self.note_last_input.addItem("")
+        self.note_last_input.addItem("")
+        self.note_last_input.addItem("")
+        self.note_last_input.addItem("")
+        self.note_last_input.addItem("")
+        self.gridLayout.addWidget(self.note_last_input, 1, 0, 1, 1)
+        self.note_lower_ambitus_input = QtWidgets.QComboBox(self.gridLayoutWidget)
+        self.note_lower_ambitus_input.setObjectName("note_lower_ambitus_input")
+        self.note_lower_ambitus_input.addItem("")
+        self.note_lower_ambitus_input.addItem("")
+        self.note_lower_ambitus_input.addItem("")
+        self.note_lower_ambitus_input.addItem("")
+        self.note_lower_ambitus_input.addItem("")
+        self.note_lower_ambitus_input.addItem("")
+        self.note_lower_ambitus_input.addItem("")
+        self.gridLayout.addWidget(self.note_lower_ambitus_input, 2, 0, 1, 1)
+        self.note_higher_ambitus_input = QtWidgets.QComboBox(self.gridLayoutWidget)
+        self.note_higher_ambitus_input.setObjectName("note_higher_ambitus_input")
+        self.note_higher_ambitus_input.addItem("")
+        self.note_higher_ambitus_input.addItem("")
+        self.note_higher_ambitus_input.addItem("")
+        self.note_higher_ambitus_input.addItem("")
+        self.note_higher_ambitus_input.addItem("")
+        self.note_higher_ambitus_input.addItem("")
+        self.note_higher_ambitus_input.addItem("")
+        self.gridLayout.addWidget(self.note_higher_ambitus_input, 3, 0, 1, 1)
+        self.scale_first_note_input = QtWidgets.QComboBox(self.gridLayoutWidget)
+        self.scale_first_note_input.setObjectName("scale_first_note_input")
+        self.scale_first_note_input.addItem("")
+        self.scale_first_note_input.addItem("")
+        self.scale_first_note_input.addItem("")
+        self.scale_first_note_input.addItem("")
+        self.gridLayout.addWidget(self.scale_first_note_input, 0, 1, 1, 1)
+        self.scale_last_note_input = QtWidgets.QComboBox(self.gridLayoutWidget)
+        self.scale_last_note_input.setObjectName("scale_last_note_input")
+        self.scale_last_note_input.addItem("")
+        self.scale_last_note_input.addItem("")
+        self.scale_last_note_input.addItem("")
+        self.scale_last_note_input.addItem("")
+        self.gridLayout.addWidget(self.scale_last_note_input, 1, 1, 1, 1)
+        self.scale_lower_ambitus_input = QtWidgets.QComboBox(self.gridLayoutWidget)
+        self.scale_lower_ambitus_input.setObjectName("scale_lower_ambitus_input")
+        self.scale_lower_ambitus_input.addItem("")
+        self.scale_lower_ambitus_input.addItem("")
+        self.scale_lower_ambitus_input.addItem("")
+        self.scale_lower_ambitus_input.addItem("")
+        self.gridLayout.addWidget(self.scale_lower_ambitus_input, 2, 1, 1, 1)
+        self.scale_higher_ambitus_input = QtWidgets.QComboBox(self.gridLayoutWidget)
+        self.scale_higher_ambitus_input.setObjectName("scale_higher_ambitus_input")
+        self.scale_higher_ambitus_input.addItem("")
+        self.scale_higher_ambitus_input.addItem("")
+        self.scale_higher_ambitus_input.addItem("")
+        self.scale_higher_ambitus_input.addItem("")
+        self.gridLayout.addWidget(self.scale_higher_ambitus_input, 3, 1, 1, 1)
         self.metrum_insert.raise_()
-        self.comboBox_4.raise_()
-        self.comboBox.raise_()
-        self.comboBox_2.raise_()
-        self.comboBox_3.raise_()
         self.metrum_info.raise_()
         self.metrum_div.raise_()
         self.tacts_info.raise_()
         self.tacts_insert.raise_()
         self.pauses_info.raise_()
         self.pauses_insert.raise_()
+        self.first_note_info.raise_()
+        self.last_note_info.raise_()
+        self.ambitus_low_info.raise_()
+        self.ambitus_high_info.raise_()
+        self.gridLayoutWidget.raise_()
         self.settings_tabs.addTab(self.basic_settings, "")
         self.tab_2 = QtWidgets.QWidget()
         self.tab_2.setObjectName("tab_2")
@@ -290,7 +405,7 @@ class Ui_MainWindow(object):
         self.generate_button.setObjectName("generate_button")
         self.command_line_window = QtWidgets.QTextEdit(self.centralwidget)
         self.command_line_window.setEnabled(True)
-        self.command_line_window.setGeometry(QtCore.QRect(20, 10, 591, 131))
+        self.command_line_window.setGeometry(QtCore.QRect(20, 10, 591, 81))
         font = QtGui.QFont()
         font.setFamily("Times New Roman")
         font.setPointSize(12)
@@ -303,6 +418,12 @@ class Ui_MainWindow(object):
         self.command_line_window.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.command_line_window.setTextInteractionFlags(QtCore.Qt.NoTextInteraction)
         self.command_line_window.setObjectName("command_line_window")
+        self.comboBox_4 = QtWidgets.QComboBox(self.centralwidget)
+        self.comboBox_4.setGeometry(QtCore.QRect(70, 590, 151, 22))
+        self.comboBox_4.setObjectName("comboBox_4")
+        self.comboBox = QtWidgets.QComboBox(self.centralwidget)
+        self.comboBox.setGeometry(QtCore.QRect(260, 590, 121, 22))
+        self.comboBox.setObjectName("comboBox")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 640, 21))
@@ -318,6 +439,14 @@ class Ui_MainWindow(object):
         self.metrum_insert.textChanged.connect(MainWindow.change_metrum) # type: ignore
         self.tacts_insert.textChanged.connect(MainWindow.change_tacts) # type: ignore
         self.pauses_insert.textChanged.connect(MainWindow.change_likelihood_pauses) # type: ignore
+        self.note_first_input.currentTextChanged['QString'].connect(MainWindow.first_note_change) # type: ignore
+        self.note_last_input.currentTextChanged['QString'].connect(MainWindow.last_note_change) # type: ignore
+        self.note_lower_ambitus_input.currentTextChanged['QString'].connect(MainWindow.lower_ambitus_note_change) # type: ignore
+        self.note_higher_ambitus_input.currentTextChanged['QString'].connect(MainWindow.higher_ambitus_note_change) # type: ignore
+        self.scale_first_note_input.currentTextChanged['QString'].connect(MainWindow.first_note_scale_change) # type: ignore
+        self.scale_last_note_input.currentTextChanged['QString'].connect(MainWindow.last_note_scale_change) # type: ignore
+        self.scale_lower_ambitus_input.currentTextChanged['QString'].connect(MainWindow.lower_ambitus_scale_change) # type: ignore
+        self.scale_higher_ambitus_input.currentTextChanged['QString'].connect(MainWindow.higher_ambitus_scale_change) # type: ignore
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -327,7 +456,8 @@ class Ui_MainWindow(object):
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:600; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:8pt; font-style:italic;\">Here you can type in your requested metrum (in format - n/4)</span></p></body></html>"))
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; font-style:italic;\">Requested metrum (n/4)</span></p>\n"
+"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt; font-style:italic;\"><br /></p></body></html>"))
         self.metrum_insert.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
@@ -337,13 +467,12 @@ class Ui_MainWindow(object):
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:600; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:16pt; font-style:italic;\">/4</span></p></body></html>"))
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; font-style:italic;\">/4</span></p></body></html>"))
         self.tacts_info.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:600; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:8pt; font-style:italic;\">Here you can input your requested number of  tacts</span></p>\n"
-"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt; font-style:italic;\"><br /></p></body></html>"))
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; font-style:italic;\">Number of tacts</span></p></body></html>"))
         self.tacts_insert.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
@@ -353,13 +482,82 @@ class Ui_MainWindow(object):
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:600; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:8pt; font-style:italic;\">Here you can input your requested likelihood of pauses [ % ]</span></p>\n"
-"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt; font-style:italic;\"><br /></p></body></html>"))
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; font-style:italic;\">Likelihood of pauses [%]</span></p>\n"
+"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt; font-style:italic;\"><br /></p></body></html>"))
         self.pauses_insert.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:16pt; font-weight:600; font-style:normal;\">\n"
 "<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
+        self.first_note_info.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:600; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; font-style:italic;\">Requested first note</span></p></body></html>"))
+        self.last_note_info.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:600; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; font-style:italic;\">Requested last note</span></p>\n"
+"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt; font-style:italic;\"><br /></p></body></html>"))
+        self.ambitus_low_info.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:600; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:9pt; font-style:italic;\">Lower border of ambitus</span></p>\n"
+"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt; font-style:italic;\"><br /></p>\n"
+"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt; font-style:italic;\"><br /></p>\n"
+"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt; font-style:italic;\"><br /></p>\n"
+"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt; font-style:italic;\"><br /></p></body></html>"))
+        self.ambitus_high_info.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:600; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:9pt; font-style:italic;\">Higher border of ambitus</span></p></body></html>"))
+        self.note_first_input.setItemText(0, _translate("MainWindow", "C"))
+        self.note_first_input.setItemText(1, _translate("MainWindow", "D"))
+        self.note_first_input.setItemText(2, _translate("MainWindow", "E"))
+        self.note_first_input.setItemText(3, _translate("MainWindow", "F"))
+        self.note_first_input.setItemText(4, _translate("MainWindow", "G"))
+        self.note_first_input.setItemText(5, _translate("MainWindow", "A"))
+        self.note_first_input.setItemText(6, _translate("MainWindow", "H"))
+        self.note_last_input.setItemText(0, _translate("MainWindow", "C"))
+        self.note_last_input.setItemText(1, _translate("MainWindow", "D"))
+        self.note_last_input.setItemText(2, _translate("MainWindow", "E"))
+        self.note_last_input.setItemText(3, _translate("MainWindow", "F"))
+        self.note_last_input.setItemText(4, _translate("MainWindow", "G"))
+        self.note_last_input.setItemText(5, _translate("MainWindow", "A"))
+        self.note_last_input.setItemText(6, _translate("MainWindow", "H"))
+        self.note_lower_ambitus_input.setItemText(0, _translate("MainWindow", "C"))
+        self.note_lower_ambitus_input.setItemText(1, _translate("MainWindow", "D"))
+        self.note_lower_ambitus_input.setItemText(2, _translate("MainWindow", "E"))
+        self.note_lower_ambitus_input.setItemText(3, _translate("MainWindow", "F"))
+        self.note_lower_ambitus_input.setItemText(4, _translate("MainWindow", "G"))
+        self.note_lower_ambitus_input.setItemText(5, _translate("MainWindow", "A"))
+        self.note_lower_ambitus_input.setItemText(6, _translate("MainWindow", "H"))
+        self.note_higher_ambitus_input.setItemText(0, _translate("MainWindow", "C"))
+        self.note_higher_ambitus_input.setItemText(1, _translate("MainWindow", "D"))
+        self.note_higher_ambitus_input.setItemText(2, _translate("MainWindow", "E"))
+        self.note_higher_ambitus_input.setItemText(3, _translate("MainWindow", "F"))
+        self.note_higher_ambitus_input.setItemText(4, _translate("MainWindow", "G"))
+        self.note_higher_ambitus_input.setItemText(5, _translate("MainWindow", "A"))
+        self.note_higher_ambitus_input.setItemText(6, _translate("MainWindow", "H"))
+        self.scale_first_note_input.setItemText(0, _translate("MainWindow", "Wielkie"))
+        self.scale_first_note_input.setItemText(1, _translate("MainWindow", "Małe"))
+        self.scale_first_note_input.setItemText(2, _translate("MainWindow", "Razkreślne"))
+        self.scale_first_note_input.setItemText(3, _translate("MainWindow", "Dwukreślne"))
+        self.scale_last_note_input.setItemText(0, _translate("MainWindow", "Wielkie"))
+        self.scale_last_note_input.setItemText(1, _translate("MainWindow", "Małe"))
+        self.scale_last_note_input.setItemText(2, _translate("MainWindow", "Razkreślne"))
+        self.scale_last_note_input.setItemText(3, _translate("MainWindow", "Dwukreślne"))
+        self.scale_lower_ambitus_input.setItemText(0, _translate("MainWindow", "Wielkie"))
+        self.scale_lower_ambitus_input.setItemText(1, _translate("MainWindow", "Małe"))
+        self.scale_lower_ambitus_input.setItemText(2, _translate("MainWindow", "Razkreślne"))
+        self.scale_lower_ambitus_input.setItemText(3, _translate("MainWindow", "Dwukreślne"))
+        self.scale_higher_ambitus_input.setItemText(0, _translate("MainWindow", "Wielkie"))
+        self.scale_higher_ambitus_input.setItemText(1, _translate("MainWindow", "Małe"))
+        self.scale_higher_ambitus_input.setItemText(2, _translate("MainWindow", "Razkreślne"))
+        self.scale_higher_ambitus_input.setItemText(3, _translate("MainWindow", "Dwukreślne"))
         self.settings_tabs.setTabText(self.settings_tabs.indexOf(self.basic_settings), _translate("MainWindow", "Basic_Settings"))
         self.settings_tabs.setTabText(self.settings_tabs.indexOf(self.tab_2), _translate("MainWindow", "Tab 2"))
         self.generate_button.setText(_translate("MainWindow", "Generate"))
