@@ -1,5 +1,9 @@
 class music_informations():
     melody = []
+    first_note = "C"
+    last_note = "C"
+    lower_ambitus = "C"
+    higher_ambitus = "C"
     tacts = 0
     metrum = 0
     pauses_likelihood = 0

@@ -1051,17 +1051,33 @@ p, li { white-space: pre-wrap; }
  <resources/>
  <connections>
   <connection>
-   <sender>generate_button</sender>
-   <signal>clicked()</signal>
+   <sender>pauses_insert</sender>
+   <signal>textChanged()</signal>
    <receiver>MainWindow</receiver>
-   <slot>generate_music()</slot>
+   <slot>change_likelihood_pauses()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>494</x>
-     <y>515</y>
+     <x>351</x>
+     <y>253</y>
     </hint>
     <hint type="destinationlabel">
-     <x>430</x>
+     <x>461</x>
+     <y>-5</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>tacts_insert</sender>
+   <signal>textChanged()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>change_tacts()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>315</x>
+     <y>223</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>242</x>
      <y>-12</y>
     </hint>
    </hints>
@@ -1083,34 +1099,18 @@ p, li { white-space: pre-wrap; }
    </hints>
   </connection>
   <connection>
-   <sender>tacts_insert</sender>
-   <signal>textChanged()</signal>
+   <sender>generate_button</sender>
+   <signal>clicked()</signal>
    <receiver>MainWindow</receiver>
-   <slot>change_tacts()</slot>
+   <slot>generate_music()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>315</x>
-     <y>223</y>
+     <x>494</x>
+     <y>515</y>
     </hint>
     <hint type="destinationlabel">
-     <x>242</x>
+     <x>430</x>
      <y>-12</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pauses_insert</sender>
-   <signal>textChanged()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>change_likelihood_pauses()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>351</x>
-     <y>253</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>461</x>
-     <y>-5</y>
     </hint>
    </hints>
   </connection>
@@ -1118,63 +1118,15 @@ p, li { white-space: pre-wrap; }
    <sender>note_first_input</sender>
    <signal>currentTextChanged(QString)</signal>
    <receiver>MainWindow</receiver>
-   <slot>first_note_change()</slot>
+   <slot>change_first_note()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>225</x>
-     <y>268</y>
+     <x>222</x>
+     <y>270</y>
     </hint>
     <hint type="destinationlabel">
-     <x>91</x>
-     <y>-4</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>note_last_input</sender>
-   <signal>currentTextChanged(QString)</signal>
-   <receiver>MainWindow</receiver>
-   <slot>last_note_change()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>259</x>
-     <y>299</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>153</x>
-     <y>-13</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>note_lower_ambitus_input</sender>
-   <signal>currentTextChanged(QString)</signal>
-   <receiver>MainWindow</receiver>
-   <slot>lower_ambitus_note_change()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>210</x>
-     <y>323</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>639</x>
-     <y>46</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>note_higher_ambitus_input</sender>
-   <signal>currentTextChanged(QString)</signal>
-   <receiver>MainWindow</receiver>
-   <slot>higher_ambitus_note_change()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>239</x>
-     <y>359</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>640</x>
-     <y>81</y>
+     <x>202</x>
+     <y>-1</y>
     </hint>
    </hints>
   </connection>
@@ -1182,15 +1134,31 @@ p, li { white-space: pre-wrap; }
    <sender>scale_first_note_input</sender>
    <signal>currentTextChanged(QString)</signal>
    <receiver>MainWindow</receiver>
-   <slot>first_note_scale_change()</slot>
+   <slot>change_first_note()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>293</x>
-     <y>275</y>
+     <x>315</x>
+     <y>267</y>
     </hint>
     <hint type="destinationlabel">
-     <x>638</x>
-     <y>114</y>
+     <x>319</x>
+     <y>333</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>note_last_input</sender>
+   <signal>currentTextChanged(QString)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>change_last_note()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>233</x>
+     <y>297</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>319</x>
+     <y>333</y>
     </hint>
    </hints>
   </connection>
@@ -1198,15 +1166,31 @@ p, li { white-space: pre-wrap; }
    <sender>scale_last_note_input</sender>
    <signal>currentTextChanged(QString)</signal>
    <receiver>MainWindow</receiver>
-   <slot>last_note_scale_change()</slot>
+   <slot>change_last_note()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>321</x>
-     <y>298</y>
+     <x>315</x>
+     <y>297</y>
     </hint>
     <hint type="destinationlabel">
-     <x>638</x>
-     <y>139</y>
+     <x>319</x>
+     <y>333</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>note_lower_ambitus_input</sender>
+   <signal>currentTextChanged(QString)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>change_lower_border()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>233</x>
+     <y>327</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>319</x>
+     <y>333</y>
     </hint>
    </hints>
   </connection>
@@ -1214,15 +1198,31 @@ p, li { white-space: pre-wrap; }
    <sender>scale_lower_ambitus_input</sender>
    <signal>currentTextChanged(QString)</signal>
    <receiver>MainWindow</receiver>
-   <slot>lower_ambitus_scale_change()</slot>
+   <slot>change_lower_border()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>346</x>
-     <y>325</y>
+     <x>315</x>
+     <y>327</y>
     </hint>
     <hint type="destinationlabel">
-     <x>637</x>
-     <y>174</y>
+     <x>319</x>
+     <y>333</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>note_higher_ambitus_input</sender>
+   <signal>currentTextChanged(QString)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>change_higher_border()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>233</x>
+     <y>357</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>319</x>
+     <y>333</y>
     </hint>
    </hints>
   </connection>
@@ -1230,15 +1230,15 @@ p, li { white-space: pre-wrap; }
    <sender>scale_higher_ambitus_input</sender>
    <signal>currentTextChanged(QString)</signal>
    <receiver>MainWindow</receiver>
-   <slot>higher_ambitus_scale_change()</slot>
+   <slot>change_higher_border()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>333</x>
-     <y>363</y>
+     <x>315</x>
+     <y>357</y>
     </hint>
     <hint type="destinationlabel">
-     <x>638</x>
-     <y>214</y>
+     <x>319</x>
+     <y>333</y>
     </hint>
    </hints>
   </connection>
@@ -1249,13 +1249,9 @@ p, li { white-space: pre-wrap; }
   <slot>change_metrum()</slot>
   <slot>change_tacts()</slot>
   <slot>change_likelihood_pauses()</slot>
-  <slot>first_note_change()</slot>
-  <slot>last_note_change()</slot>
-  <slot>lower_ambitus_note_change()</slot>
-  <slot>higher_ambitus_note_change()</slot>
-  <slot>first_note_scale_change()</slot>
-  <slot>last_note_scale_change()</slot>
-  <slot>lower_ambitus_scale_change()</slot>
-  <slot>higher_ambitus_scale_change()</slot>
+  <slot>change_first_note()</slot>
+  <slot>change_last_note()</slot>
+  <slot>change_lower_border()</slot>
+  <slot>change_higher_border()</slot>
  </slots>
 </ui>
