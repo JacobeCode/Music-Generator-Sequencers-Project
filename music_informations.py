@@ -1,12 +1,13 @@
 class music_informations():
     melody = []
-    first_note = "C"
-    last_note = "C"
-    lower_ambitus = "C"
-    higher_ambitus = "C"
-    tacts = 0
-    metrum = 0
-    pauses_likelihood = 0
+    first_note = "c,"
+    last_note = "c,"
+    lower_ambitus = "c,"
+    higher_ambitus = "b''"
+    tacts = 1
+    metrum = 1
+    pauses_likelihood = 10
+    melody_type = "Atonic"
 
     title = "Default"
     subtitle = "Default"
@@ -14,6 +15,16 @@ class music_informations():
     full_scale = ["c,", "d,", "e,", "f,", "g,", "a,", "b,", "c", "d", "e", "f", "g", "a", "b", "c'", "d'", "e'",
                   "f'", "g'", "a'", "b'",
                   "c''", "d''", "e''", "f''", "g''", "a''", "b''", "r"]
+
+    scale_sound = ["c", "d", "e", "f", "g", "a", "b", "r"]
+    scale_sound_score = [1, 2, 3, 4, 5, 6, 7, 0]
+
+    chromatic_scale_end_upper = ["is", "isis", ""]
+    chromatic_scale_end_lower = ["es", "eses", ""]
+    chromatic_scale_end_score = [0.5, 1]
+
+    scale_number = [",", "", "'", "''"]
+    scale_number_score = [0, 7, 14, 21]
 
     durations = ["16", "8", "8.", "4", "4.", "4..", "2", "2.", "2..", "1", "1.", "1.."]
 
