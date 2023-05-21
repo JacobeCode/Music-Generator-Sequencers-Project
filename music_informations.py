@@ -9,6 +9,22 @@ class music_informations():
     pauses_likelihood = 10
     melody_type = "Atonic"
 
+    how_much_1 = 1
+    how_much_2m = 1
+    how_much_2w = 1
+    how_much_3m = 1
+    how_much_3w = 1
+    how_much_4 = 1
+    how_much_4zm = 1
+    how_much_5 = 1
+    how_much_6m = 1
+    how_much_6w = 1
+    how_much_7m = 1
+    how_much_7w = 1
+    how_much_8 = 1
+
+    interval = [0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6]
+
     title = "Default"
     subtitle = "Default"
 
@@ -16,7 +32,7 @@ class music_informations():
                   "f'", "g'", "a'", "b'",
                   "c''", "d''", "e''", "f''", "g''", "a''", "b''", "r"]
 
-    scale_sound = ["c", "d", "e", "f", "g", "a", "b", "r"]
+    scale_sound = ["c", "d", "e", "f", "g", "a", "b"]
     scale_sound_score = [1, 2, 3, 4, 5, 6, 7, 0]
 
     chromatic_scale_end_upper = ["is", "isis", ""]

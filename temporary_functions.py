@@ -1,5 +1,3 @@
-# Current version updated to basic ligature
-
 import os
 import random
 
@@ -16,6 +14,8 @@ class Ui_MainWindow(object):
         points_to_use = (self.music_info.metrum * self.music_info.tacts) * 4
         tact_space = self.music_info.metrum * 4
         used_durations = []
+
+        is_bemol = random.randint(0, 100)
 
         scale_range = [self.music_info.full_scale.index(self.music_info.lower_ambitus), self.music_info.full_scale.index(self.music_info.higher_ambitus)]
 
@@ -44,6 +44,32 @@ class Ui_MainWindow(object):
                 index = random.randint(0, 11)
                 note_highness = random.randint(scale_range[0], scale_range[1])
                 is_ligature = random.randint(0, 100)
+
+                val_1 = random.randint(0, self.music_info.how_much_1)
+                val_2m = random.randint(0, self.music_info.how_much_2m)
+                val_2w = random.randint(0, self.music_info.how_much_2w)
+                val_3m = random.randint(0, self.music_info.how_much_3m)
+                val_3w = random.randint(0, self.music_info.how_much_3w)
+                val_4 = random.randint(0, self.music_info.how_much_4)
+                val_5 = random.randint(0, self.music_info.how_much_5)
+                val_6m = random.randint(0, self.music_info.how_much_6m)
+                val_6w = random.randint(0, self.music_info.how_much_6w)
+                val_7m = random.randint(0, self.music_info.how_much_7m)
+                val_7w = random.randint(0, self.music_info.how_much_7w)
+                val_8 = random.randint(0, self.music_info.how_much_8)
+
+                interval_likelihoods = [val_1, val_2m, val_2w, val_3m, val_3w, val_4, val_5, val_6m, val_6w, val_7m, val_7w, val_8]
+
+                where_max = interval_likelihoods.index(max(interval_likelihoods))
+
+                if len(where_max) != 1:
+                    max_random = random.randint(0, len(where_max))
+                    where_max = where_max[max_random]
+                else:
+                    pass
+
+                interval =
+
                 if points_to_use >= self.music_info.durations_weights[index] and tact_space >= \
                         self.music_info.durations_weights[index]:
                     if is_ligature > 40:
@@ -55,6 +81,36 @@ class Ui_MainWindow(object):
                     points_to_use -= self.music_info.durations_weights[index]
                     tact_space -= self.music_info.durations_weights[index]
                     used_durations.append(self.music_info.durations[index])
+                    if self.music_info.melody_type == "Chromatic":
+
+                        halftones = random.randint(0, 2)
+                        if is_bemol >= 50:
+                            proper_scale = self.music_info.chromatic_scale_end_lower
+                        elif is_bemol < 50:
+                            proper_scale = self.music_info.chromatic_scale_end_upper
+
+                        note_to_assign = proper_scale[halftones]
+                        if is_bemol >= 50:
+                            if self.music_info.melody[-1][0] == "e" or self.music_info.melody[-1][0] == "a" and halftones == 1:
+                                note_to_assign = "ses"
+                            elif self.music_info.melody[-1][0] == "e" or self.music_info.melody[-1][0] == "a" and halftones == 0:
+                                note_to_assign = "s"
+                            else:
+                                pass
+                        else:
+                            pass
+
+                        if len(self.music_info.melody[-1]) <= 2:
+                            self.music_info.melody[-1] = self.music_info.melody[-1][0] + note_to_assign + \
+                                                         used_durations[-1]
+                        elif self.music_info.melody[-1][2] == "'":
+                            self.music_info.melody[-1] = self.music_info.melody[-1][0] + note_to_assign + \
+                                                         self.music_info.melody[-1][1] + self.music_info.melody[-1][2] + used_durations[-1]
+                        elif self.music_info.melody[-1][1] == "'":
+                            self.music_info.melody[-1] = self.music_info.melody[-1][0] + note_to_assign + \
+                                                         self.music_info.melody[-1][1] + used_durations[-1]
+                        else:
+                            self.music_info.melody[-1] = self.music_info.melody[-1][0] + note_to_assign + used_durations[-1]
                 else:
                     pass
 
@@ -98,9 +154,9 @@ class Ui_MainWindow(object):
         self.music_info.first_note = note.lower()
 
         if scale == "Wielkie":
-            pass
-        elif scale == "Małe":
             self.music_info.first_note = self.music_info.first_note + ","
+        elif scale == "Małe":
+            pass
         elif scale == "Razkreślne":
             self.music_info.first_note = self.music_info.first_note + "'"
         elif scale == "Dwukreślne":
@@ -116,7 +172,7 @@ class Ui_MainWindow(object):
             self.music_info.last_note = note
 
         if scale == "Wielkie":
-            pass
+            self.music_info.last_note = self.music_info.last_note + ","
         elif scale == "Małe":
             pass
         elif scale == "Razkreślne":
@@ -134,7 +190,7 @@ class Ui_MainWindow(object):
             self.music_info.lower_ambitus = note
 
         if scale == "Wielkie":
-            pass
+            self.music_info.lower_ambitus = self.music_info.lower_ambitus + ","
         elif scale == "Małe":
             pass
         elif scale == "Razkreślne":
@@ -152,7 +208,7 @@ class Ui_MainWindow(object):
             self.music_info.higher_ambitus = note
 
         if scale == "Wielkie":
-            pass
+            self.music_info.higher_ambitus = self.music_info.higher_ambitus + ","
         elif scale == "Małe":
             pass
         elif scale == "Razkreślne":
@@ -161,7 +217,18 @@ class Ui_MainWindow(object):
             self.music_info.higher_ambitus = self.music_info.higher_ambitus + "''"
 
     def change_interval_likelihood(self):
-        pass
+        self.music_info.how_much_1 = self.input_1.value()
+        self.music_info.how_much_2m = self.input_2m.value()
+        self.music_info.how_much_2w = self.input_2w.value()
+        self.music_info.how_much_3m = self.input_3m.value()
+        self.music_info.how_much_3w = self.input_3w.value()
+        self.music_info.how_much_4 = self.input_4.value()
+        self.music_info.how_much_5 = self.input_5.value()
+        self.music_info.how_much_6m = self.input_6m.value()
+        self.music_info.how_much_6w = self.input_6w.value()
+        self.music_info.how_much_7m = self.input_7m.value()
+        self.music_info.how_much_7w = self.input_7w.value()
+        self.music_info.how_much_8 = self.input_8.value()
 
     def change_melody_type(self):
-        pass
+        self.music_info.melody_type = self.melody_type_input.currentText()

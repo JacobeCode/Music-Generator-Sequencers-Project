@@ -1,4 +1,4 @@
-from old_window import Ui_MainWindow
+from window import Ui_MainWindow
 
 from PyQt5 import QtWidgets
 
