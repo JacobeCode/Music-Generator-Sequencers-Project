@@ -1,3 +1,5 @@
+# Prototype window contains older version of algorithm for generating melody
+
 import os
 import random
 

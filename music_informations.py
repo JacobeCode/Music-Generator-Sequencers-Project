@@ -1,3 +1,5 @@
+# Container class for all the information needed for melody generation
+
 class music_informations():
     melody = []
     first_note = "c,"

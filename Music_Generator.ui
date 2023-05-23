@@ -2307,6 +2307,22 @@ p, li { white-space: pre-wrap; }
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>input_4zm</sender>
+   <signal>valueChanged(QString)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>change_interval_likelihood()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>322</x>
+     <y>188</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>319</x>
+     <y>311</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>generate_music()</slot>
