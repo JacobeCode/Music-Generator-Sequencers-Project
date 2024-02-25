@@ -13,5 +13,5 @@ Program requires PyQt5 and LilyPond - and libraries:
 
 ## Launch
 
-To run the program simply use and start 'main.py'.
+To run the program simply use and start `main.py`.
 
